@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'timesheet.apps.TimesheetConfig',
+    'django_filters'
+
 ]
 
 MIDDLEWARE = [
@@ -104,9 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'de-ch'
+LANGUAGE_CODE = 'fr-ch'
 
-TIME_ZONE = 'Europe/Berlin'
+TIME_ZONE = 'Europe/Zurich'
 
 USE_I18N = True
 
@@ -120,3 +122,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+LOGIN_REDIRECT_URL = 'login_success'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

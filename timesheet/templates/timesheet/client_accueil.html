@@ -1,0 +1,79 @@
+<!Doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Accueil</title>
+    <link href="../../static/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="client_accueil.html"> <img src="../../static/Logo.jpg" style="width: 200px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" href="client_accueil.html">Accueil</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'go_contact_client' %}">Contact</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    {% if user.is_authenticated %}
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.get_username }}</a>
+                    {% endif %}
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'go_deconnexion' %}">Se déconnecter</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <table class="table table-borderless">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <h2>Information sur l'entreprise</h2>
+                </th>
+                <th scope="col">
+                    <h2>Prestations proposées par l'entreprise</h2>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">
+                    <p>
+                        Jarnic S.A. a été fondé le 12 juin 1990, et qui fêtera ces 30 ans en 2020,
+                        cela démontre que l'entreprise a du vécu. De plus elle a réussi à se faire une bonne image au sein de
+                        régies connu à Genève, tels que le Comptoir Immobilier, Brun, Daudin, Schmidhauser et bien d'autres.
+                    </p>
+                </td>
+                <td scope="row">
+                    <p>
+                        Nous sommes une entreprise spécialisée dans la pose de carrelage, que ça soit pour une cuisine, une salle de bain,
+                        des sols ou murs intérieurs ainsi qu’extérieur ou encore pour une piscine. Nos employés sont aptes
+                        à faire l'entretien de tous vos sols et murs qu'ils soient en carrelage, faïence, mosaïque, marbre ou même en pierre.
+                        L'entreprise travaille aussi dans la petite maçonnerie et le bâtissage de cloison ainsi que dans le domaine de la rénovation.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

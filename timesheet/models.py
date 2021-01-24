@@ -1,33 +1,42 @@
-from django.db import models
-
 # Create your models here.
-from django.conf import settings
 from django.db import models
-from django.utils import timezone
-
-class Employe(models.Model):
-    id_employe=models.Field(primary_key=True)
-    nom_employe=models.CharField(max_length=200)
-    prenom_employe=models.CharField(max_length=200)
-    adresse_employe=models.CharField(max_length=200)
-    datenaissance_employe=models.DateField()
-    email_employe=models.CharField(max_length=200)
-    mdp_employe=models.CharField(max_length=200)
-    role_employe=models.CharField(max_length=200)
-    suppr_employe=models.IntegerField()
-
 
 
 class Chantier(models.Model):
-    id_chantier=models.Field(primary_key=True)
-    adresse_chantier=models.CharField(max_length=200)
-    datedeb_chantier=models.DateField()
-    datefin_chantier=models.DateField()
-    statut_chantier=models.CharField(max_length=200)
+    adresse = models.CharField(max_length=200)
+    datedeb = models.DateField()
+    datefin = models.DateField()
+    statut = models.CharField(max_length=200)
 
-class asso_chant_emp(models.Model):
-    id_chantier=models.ForeignKey(Chantier,on_delete=models.CASCADE)
-    id_employe=models.ForeignKey(Employe,on_delete=models.CASCADE)
-    date_chantier=models.DateField()
-    Nbheure_chantier=models.IntegerField()
-    statsuppr_chant=models.IntegerField()
+    def __str__(self):
+        return self.adresse
+
+
+class Employe(models.Model):
+    nom = models.CharField(max_length=200)
+    prenom = models.CharField(max_length=200)
+    adresse = models.CharField(max_length=200)
+    datenaissance = models.DateField()
+    email = models.CharField(max_length=200)
+    mdp = models.CharField(max_length=200)
+    role = models.CharField(max_length=200)
+    suppr = models.IntegerField()
+    chantiers = models.ManyToManyField(Chantier, through="Timesheet")
+
+    def __str__(self):
+        return self.nom
+
+
+class Timesheet(models.Model):
+    chantier = models.ForeignKey(Chantier, on_delete=models.CASCADE)
+    employe = models.ForeignKey(Employe, on_delete=models.CASCADE)
+    date = models.DateField()
+    nbheure = models.IntegerField()
+
+    def get_month_format(self):
+        """
+        Get a month format string in strptime syntax to be used to parse the
+        month from url variables.
+        """
+        return self.month_format
+

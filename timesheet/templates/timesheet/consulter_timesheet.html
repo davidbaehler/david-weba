@@ -4,53 +4,78 @@
 <head>
     <meta charset="utf-8">
     <title>TimeSheet</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="../../static/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 </head>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="employe_accueil.html"> <img src="../../static/Logo.jpg" style="width: 200px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" href="employe_accueil.html">Accueil</a>
+                </li>
 
-<h1>Consulter TimeSheet</h1>
-<div class="container">
-    <div class="col-md-12">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'go_timesheet_emp' %}">Horaires</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    {% if user.is_authenticated %}
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.get_username }}</a>
+                    {% endif %}
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'go_deconnexion' %}">Se déconnecter</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+<h1 align="center">Consulter TimeSheet</h1>
+<br><br>
+<div class="container" align="right">
+    <div class="col-md-9">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <p>Date</p>
             </div>
-            <div class="col-md-3">
-                <p>Adresse du chantier</p>
+            <div class="col-md-2">
+                <p>Adresse Chantier</p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <p>Nombre d'heures</p>
             </div>
         </div>
 
 
+            {% for t in timesheets %}
+            <form action="consulter_timesheet.html" method="post">
 
-            <form action="redir.php" method="post">
                 <div class="row">
-                    <div class="col-md-3"><input type="text" value="<?php echo $donnees['DATE_CHANT'] ?> " name="date"></div>
-                    <div class="col-md-3"><input type="text" value="<?php echo recupAdresseChantier($donnees['ID_CHANT']) ?>" name="adresse"> </div>
-                    <div class="col-md-3"><input type="text" value="<?php echo $donnees['NBHEURE_CHANT'] ?>" name="nbh"></div>
-                    <button type="submit" name="modif" value="<?= $donnees['ID_CHANT'] ?>">Modifier</button>
+                    <div class="col-md-2" align="right"><input type="text" name="date" value="{{t.date}}"></div>
+                    <div class="col-md-2" align="right"><input type="text" name="nbh" value="{{t.chantier.adresse}}"></div>
+                    <div class="col-md-2" align="right"><input type="text" name="nbh" value={{t.nbheure}}></div>
 
-                    <button type="submit" name="supp" value="<?= $donnees['ID_CHANT'] ?>">Supprimer</button>
+                    <!--<button type="submit" name="modif">Modifier</button>-->
+
+
                 </div>
+
             </form>
+        {% endfor %}
+
 
 
     </div>
 </div>
-<form action="timesheet.php"></form>
-<a href="ajouter.php">
-    <input type="button" name="ajouter" value="Ajouter">
-</a>
-</form>
 </body>
 
 </html>

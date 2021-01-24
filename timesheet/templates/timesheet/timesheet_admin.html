@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timesheet Admin</title>
+    <link href="../../static/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="admin_accueil.html"> <img src="../../static/Logo.jpg" style="width: 200px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ">
+                <li class="nav-item active">
+                    <a class="nav-link" href="admin_accueil.html">Accueil</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Horaires
+                    </a>
+				    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'go_emp_ts' %}">Par employé</a>
+                        <a class="dropdown-item" href="{% url 'go_timesheet_admin' %}">Par date</a>
+                        <a class="dropdown-item" href="{% url 'go_timesheet_admin_chant' %}">Par chantier</a>
+					</div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Chantier
+                    </a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'go_chantier_admin' %}">Liste Chantiers</a>
+					</div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    {% if user.is_authenticated %}
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.get_username }}</a>
+                    {% endif %}
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'go_deconnexion' %}">Se déconnecter</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<h1 align="center">Consulter TimeSheet</h1>
+<form action="{%  url 'go_timesheet_admin' %}" method="get">
+
+    <div class="col-md-3">
+        <button  type="submit" class=" btn btn-primary" name="Tout">Tout</button>
+
+    </div>
+</form>
+
+
+
+<form  method="get" action="{% url 'go_timesheet_admin' %}">
+    <input type="date" name="search">
+    <button type="submit" class=" btn btn-primary" name="date">search</button>
+
+</form>
+
+  <br>
+    <div>
+        <!--<input type="date" name="month">-->
+
+    </div>
+
+
+
+    </div>
+
+
+</form>
+
+<div class="container" align="right">
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-2">
+                <p>Date</p>
+            </div>
+             <div class="col-md-2">
+                <p>Adresse Chantier</p>
+            </div>
+            <div class="col-md-2">
+                <p>Nombre d'heures</p>
+            </div>
+        </div>
+
+
+            {% for t in posts %}
+            <form action="timesheet_admin.html" method="post">
+
+                <div class="row">
+                    <div class="col-md-2" align="right"><input type="text" name="date" value="{{t.date}}"></div>
+                    <div class="col-md-2" align="right"><input type="text" name="nbh" value="{{t.chantier.adresse}}"></div>
+                    <div class="col-md-2" align="right"><input type="text" name="nbh" value="{{t.nbheure}}"></div>
+                    <!--<button type="submit" name="modif">Modifier</button>-->
+
+
+                </div>
+
+            </form>
+
+        {% endfor %}
+
+
+
+
+
+    </div>
+</div>
+
+</body>
+</html>

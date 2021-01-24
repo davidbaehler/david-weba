@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9aa910c6-73c2-4148-83be-fd59558f6444" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timesheet/templates/timesheet/admin_accueil.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timesheet/templates/timesheet/chantier_admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timesheet/templates/timesheet/client_accueil.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timesheet/templates/timesheet/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timesheet/templates/timesheet/contact_client.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timesheet/templates/timesheet/employe_accueil.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timesheet/templates/timesheet/filter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timesheet/templates/timesheet/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timesheet/templates/timesheet/timesheet_admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timesheet/templates/timesheet/timesheet_admin_chantier.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timesheet/templates/timesheet/timesheet_admin_emp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/weba.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/weba.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jarnicsa/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/jarnicsa/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jarnicsa/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/jarnicsa/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timesheet/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/timesheet/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timesheet/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/timesheet/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timesheet/static/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/timesheet/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timesheet/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timesheet/templates/timesheet/ajouter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timesheet/templates/timesheet/consulter_timesheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/timesheet/templates/timesheet/consulter_timesheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timesheet/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/timesheet/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timesheet/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/timesheet/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="3468ac82-78a9-4366-b92c-077d301cef73" />
+  <component name="ProjectId" id="1mkcRhY35BAMLmOiEzP1sMB80ne" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\weba\timesheet\templates\timesheet\registration" />
+      <recent name="D:\weba\timesheet\templates\timesheet" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9aa910c6-73c2-4148-83be-fd59558f6444" name="Default Changelist" comment="" />
+      <created>1610041022308</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610041022308</updated>
+      <workItem from="1610041589321" duration="525000" />
+      <workItem from="1610042293158" duration="145000" />
+      <workItem from="1610042660321" duration="132000" />
+      <workItem from="1610042793865" duration="3370000" />
+      <workItem from="1610114711847" duration="2937000" />
+      <workItem from="1610410268726" duration="721000" />
+      <workItem from="1610464431015" duration="7345000" />
+      <workItem from="1610641296982" duration="3057000" />
+      <workItem from="1610696120690" duration="1010000" />
+      <workItem from="1610697147094" duration="7183000" />
+      <workItem from="1610705238647" duration="543000" />
+      <workItem from="1610705803338" duration="1994000" />
+      <workItem from="1610977313474" duration="565000" />
+      <workItem from="1610977886088" duration="11534000" />
+      <workItem from="1611061325329" duration="2234000" />
+      <workItem from="1611063586542" duration="8293000" />
+      <workItem from="1611155070075" duration="5809000" />
+      <workItem from="1611237977454" duration="11209000" />
+      <workItem from="1611406154539" duration="12110000" />
+      <workItem from="1611511197119" duration="1805000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

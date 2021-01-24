@@ -1,0 +1,3 @@
+admin: admin, admin123
+client: client, jarnicsa123
+employe:employe, jarnic123
